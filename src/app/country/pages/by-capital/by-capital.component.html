@@ -1,0 +1,14 @@
+<h2>By Capital</h2>
+<hr>
+<div class="row">
+    <div class="col">
+    <app-input-country (onEnter)="search($event)" (onDebounce)="autoComplete($event)"></app-input-country>        
+    </div>
+</div>
+<hr>
+<div *ngIf="isError" class="alert alert-danger">Country {{word}} not found</div>
+<div *ngIf="countries.length>0" class="row">
+    <div class="col">
+        <app-table-country [countries]="countries"></app-table-country>
+    </div>
+</div>

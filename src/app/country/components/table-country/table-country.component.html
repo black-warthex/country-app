@@ -1,0 +1,21 @@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Flag</th>
+            <th>Name</th>
+            <th>Population</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let country of countries; let i = index">
+            <td>{{i+1}}</td>
+            <img class="small-flag" src="{{country.flag}}">
+            <td>{{country.capital}}, {{country.name}}</td>
+            <td>{{country.population | number}}</td>
+            <td>
+                <a [routerLink]="['/country',country.alpha2Code]" >ver...</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
